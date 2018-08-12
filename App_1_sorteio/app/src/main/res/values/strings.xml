@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Primeiro Projeto</string>
+    <string name="button">Button</string>
+    <string name="sortear_n_mero">Sortear Número</string>
+    <string name="escolha_um_n_mero_entre_1_e_100">Escolha um número entre 1 e 100</string>
+    <string name="n_mero_sorteado">Número sorteado</string>
+</resources>
