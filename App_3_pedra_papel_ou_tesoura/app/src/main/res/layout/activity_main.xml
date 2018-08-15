@@ -6,13 +6,98 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imgFundo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fundo" />
+
+    <ImageView
+        android:id="@+id/imgBtPedra"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginStart="3dp"
+        android:onClick="escolherPedra"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBtPapel"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtPapel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgBtPapel"
+        app:srcCompat="@drawable/pedra_bg" />
+
+    <ImageView
+        android:id="@+id/imgBtPapel"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:onClick="escolherPapel"
+        app:layout_constraintBottom_toBottomOf="@+id/vitoriaPlayer"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtTesoura"
+        app:layout_constraintStart_toEndOf="@+id/imgBtPedra"
+        app:srcCompat="@drawable/papel_bg" />
+
+    <ImageView
+        android:id="@+id/imgBtTesoura"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:onClick="escolherTesoura"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBtPapel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgBtPapel"
+        app:layout_constraintTop_toTopOf="@+id/imgBtPapel"
+        app:srcCompat="@drawable/tesoura_bg" />
+
+    <ImageView
+        android:id="@+id/imgRodape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/imgFundo"
+        app:layout_constraintTop_toTopOf="@+id/imgFundo"
+        app:srcCompat="@drawable/rodape" />
+
+    <TextView
+        android:id="@+id/vitoriaPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="39dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/vitoriaComputador"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtComputador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgBtComputador"
+        android:layout_width="76dp"
+        android:layout_height="118dp"
+        android:layout_marginBottom="274dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vitoriaComputador" />
 
 </android.support.constraint.ConstraintLayout>

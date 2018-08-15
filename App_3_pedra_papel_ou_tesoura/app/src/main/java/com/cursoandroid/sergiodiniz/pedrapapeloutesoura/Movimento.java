@@ -1,7 +1,9 @@
 package com.cursoandroid.sergiodiniz.pedrapapeloutesoura;
 
 public enum Movimento {
-    PEDRA, PAPEL, TESOURA;
+    PEDRA,
+    PAPEL,
+    TESOURA;
 
     public int compareMovimento(Movimento outroMovimento){
         // empate
