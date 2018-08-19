@@ -6,3 +6,4 @@ Apps Desenvolvidos:
 * [Pedra, Papel ou Tesoura](https://github.com/SergioDiniz/estudo_dev_android_27/tree/master/App_3_pedra_papel_ou_tesoura)
 * [Notícia](https://github.com/SergioDiniz/estudo_dev_android_27/tree/master/App_4_noticia)
 * [Player de Música](https://github.com/SergioDiniz/estudo_dev_android_27/tree/master/App_5_player_musica)
+* [Álcool ou Gasolina](https://github.com/SergioDiniz/estudo_dev_android_27/tree/master/App_6_alcool_ou_gasolina)
