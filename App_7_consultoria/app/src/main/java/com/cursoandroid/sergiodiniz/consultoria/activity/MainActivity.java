@@ -1,4 +1,4 @@
-package com.cursoandroid.sergiodiniz.consultoria;
+package com.cursoandroid.sergiodiniz.consultoria.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.cursoandroid.sergiodiniz.consultoria.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -80,17 +82,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_principal) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_servicos) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_clientes) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_contato) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_sobre) {
 
         }
 
