@@ -3,6 +3,8 @@ package com.cursoandroid.sergiodiniz.consultoria.activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.cursoandroid.sergiodiniz.consultoria.R;
+import com.cursoandroid.sergiodiniz.consultoria.fragment.ClientesFragment;
+import com.cursoandroid.sergiodiniz.consultoria.fragment.PrincipalFragment;
+import com.cursoandroid.sergiodiniz.consultoria.fragment.ServicosFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,6 +29,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // Fragment principal ao iniciar o app
+        this.fragmentReplace(new PrincipalFragment());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -82,12 +90,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+
+        // Tive ir nas classes de Fragmest e mudar o import do extends Fragment para android.support.v4.app.Fragment;
+
         if (id == R.id.nav_principal) {
-            // Handle the camera action
+            this.fragmentReplace(new PrincipalFragment());
         } else if (id == R.id.nav_servicos) {
-
+            this.fragmentReplace(new ServicosFragment());
         } else if (id == R.id.nav_clientes) {
-
+            this.fragmentReplace(new ClientesFragment());
         } else if (id == R.id.nav_contato) {
 
         } else if (id == R.id.nav_sobre) {
@@ -97,5 +108,11 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void fragmentReplace(Fragment fragment){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frameContainer, fragment);
+        transaction.commit();
     }
 }
