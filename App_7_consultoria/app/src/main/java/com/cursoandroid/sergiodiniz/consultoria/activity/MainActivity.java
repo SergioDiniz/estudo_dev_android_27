@@ -1,5 +1,6 @@
 package com.cursoandroid.sergiodiniz.consultoria.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -37,8 +38,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                enviarEmail();
             }
         });
 
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_clientes) {
             this.fragmentReplace(new ClientesFragment());
         } else if (id == R.id.nav_contato) {
-
+            this.enviarEmail();
         } else if (id == R.id.nav_sobre) {
 
         }
@@ -114,5 +114,18 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frameContainer, fragment);
         transaction.commit();
+    }
+
+    public void enviarEmail(){
+        Intent email = new Intent(Intent.ACTION_SEND);
+        email.putExtra(Intent.EXTRA_EMAIL, new String[]{"sergiodinizsh@gmail.com"});
+        email.putExtra(Intent.EXTRA_SUBJECT, "Contato pelo App");
+        email.putExtra(Intent.EXTRA_TEXT, "Mensagem automática");
+
+        // configurar apps para email
+        email.setType("message/rfc822");
+
+        startActivity(Intent.createChooser(email, "Escolha o App de email"));
+
     }
 }
