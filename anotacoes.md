@@ -16,3 +16,13 @@
  * [ ] Instalar ConstraintLayout for Android (v. mais recente) - Tools
  * [ ] Instalar Solver for ConstraintLayout (v. mais recente) - Tools
  * [ ] Instalar Android Support Repository - Tools
+ 
+ ### Suluções de Problemas
+ * Visualização do Design no AS não funciona:
+ 	* No Arquivo styles.xml aditar: <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+	* No build.gradle(Module: app) editar: 
+		* compileSdkVersion 26
+		* targetSdkVersion 26
+		* implementation 'com.android.support:appcompat-v7:26.1.0'
+		* implementation 'com.android.support:design:26.1.0'
+	
